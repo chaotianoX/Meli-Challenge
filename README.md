@@ -10,7 +10,7 @@ Para que la aplicación funcione correctamente, es necesario tener instalado:
 ## Utilizar la aplicación
 Para el uso de la aplicación, es necesario:
  - Clonar el repositorio
- - Generar el archivo **credentials.json** y guardarlo dentro del repositorio clonado.
+ - Generar el archivo **credentials.json** y guardarlo dentro del repositorio clonado. En caso de no saber como realizarlo, puede consultar el instructivo **Credentials Guide**
  - Ejecutar el comando `pip3 install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib` para instalar las siguientes dependencias:
    - google-api-python-client
    - google-auth-httplib2
