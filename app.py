@@ -1,3 +1,4 @@
+# Import the required libraries
 from meli_aux import meli_db as DB
 from meli_aux import meli_mail as mail
 
@@ -14,7 +15,6 @@ def main():
     if inserts > 0:
         DB.dbSave(conn)
         print(str(inserts)+' new entries were registered in database')
-        print('YOU FUCKING DID IT')
     else:
         print('There were no new entries')       
 

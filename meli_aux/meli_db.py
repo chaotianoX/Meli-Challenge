@@ -1,10 +1,12 @@
 # Import the required libraries
-#import MySQLdb
+# The use of time module is for give it the Data Base the time needed for initialize
 import time
 import pymysql
 time.sleep(1)
 
 # Site from reference: https://pynative.com/python-mysql-insert-data-into-database-table/
+# This function connect to the database, create the schema and the table 
+#   if don't exist and return the connection and the cursor that can be used by another function
 def dbConnection():
     try:
         connection = pymysql.connect(host='db', \
@@ -24,7 +26,7 @@ def dbConnection():
     except pymysql.Error as error:
         print("Failed to insert into MySQL table {}".format(error))
 
-
+# This function insert a new line in the database with the requested values
 def newEntry(cursor, idCorreos, date, subject, sender, receiver):
     try:
         mySql_query = "INSERT INTO correos (`idCorreos`, `mailDate`, `Subject`, `Sender`, `Receiver`) VALUES (%s, %s, %s, %s, %s);"
@@ -34,6 +36,8 @@ def newEntry(cursor, idCorreos, date, subject, sender, receiver):
     except pymysql.Error as error:
         print("Failed to insert into MySQL table {}".format(error))
 
+# This function is used to check if the Mail ID is in the database or not
+#   and return a unique list that can be used by another function
 def checkIfExist(cursor):
     try:
         cursor.execute('SELECT idCorreos FROM challenge.correos')
@@ -46,6 +50,7 @@ def checkIfExist(cursor):
     except pymysql.Error as error:
         print("Failed to insert into MySQL table {}".format(error))
 
+# This function will commit and close the MySQL connector
 def dbSave(connection):
     connection.commit()
     connection.close()

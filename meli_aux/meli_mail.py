@@ -3,14 +3,14 @@ import dateutil.parser as parser
 from apiclient import errors
 from . import meli_token as cred
 
-# Connect to the Gmail API
+# Connect to the Gmail API 
 service = cred.getCredentials()
 
-# This function search for the mails that. Link used: https://developers.google.com/gmail/api/reference/rest
+# Documentation used: https://developers.google.com/gmail/api/reference/rest
+# This function search for a especific word and return all the mails that compliance with that. 
 def getEmails():
     try:
-        palabra = "DevOps"
-        # Call the Gmail API
+        palabra = 'DevOps' # You can change DevOps for any word
         result = service.users().messages().list(userId='me', q=palabra).execute()
         mails = []
 
@@ -26,7 +26,8 @@ def getEmails():
     except errors.HttpError as error:
         print('An error occurred: %s' %error)
 
-# This function would extract the information needed from the specific message object
+# This function will extract the information needed from the specific message
+#   and return the values that want to be stored in the database
 def extractInfo(msg_id):
     try:
         message = service.users().messages().get(userId='me', id=msg_id, format='metadata').execute()

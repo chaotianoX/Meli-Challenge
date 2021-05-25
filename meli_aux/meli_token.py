@@ -8,7 +8,8 @@ from googleapiclient.discovery import build
 # If modifying these scopes, delete the file token.json.
 SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
 
-# This function get the user's credentials. Source: https://developers.google.com/gmail/api/quickstart/python
+# Source: https://developers.google.com/gmail/api/quickstart/python
+# This function get the user's credentials. 
 def getCredentials():
     creds = None  
     # The file token.json stores the user's access and refresh tokens, and is
