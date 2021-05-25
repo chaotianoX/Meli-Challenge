@@ -1,14 +1,14 @@
 # Import the required libraries
-import mysql.connector
+#import MySQLdb
+import pymysql
 
 # Site from reference: https://pynative.com/python-mysql-insert-data-into-database-table/
 def dbConnection():
     try:
-        connection = mysql.connector.connect(
-            host='localhost',
-            #database='challenge',
-            user='root',
-            password='root')
+        connection = pymysql.connect(host='db', \
+            user='root',\
+            password='root',\
+            db='')
         cursor = connection.cursor()
         cursor.execute("CREATE SCHEMA IF NOT EXISTS `challenge`")
         cursor.execute("CREATE TABLE IF NOT EXISTS challenge.correos(\
@@ -19,7 +19,7 @@ def dbConnection():
             `Receiver` varchar(100) NOT NULL) COLLATE 'utf8mb4_bin'")
         cursor.execute("USE challenge")
         return connection, cursor
-    except mysql.connector.Error as error:
+    except pymysql.Error as error:
         print("Failed to insert into MySQL table {}".format(error))
 
 
@@ -29,7 +29,7 @@ def newEntry(cursor, idCorreos, date, subject, sender, receiver):
         record = (idCorreos, date, subject, sender, receiver)
         cursor.execute(mySql_query, record)
 
-    except mysql.connector.Error as error:
+    except pymysql.Error as error:
         print("Failed to insert into MySQL table {}".format(error))
 
 def checkIfExist(cursor):
@@ -41,7 +41,7 @@ def checkIfExist(cursor):
             for item in sublist:
                 uniqueList.append(item)
         return uniqueList
-    except mysql.connector.Error as error:
+    except pymysql.Error as error:
         print("Failed to insert into MySQL table {}".format(error))
 
 def dbSave(connection):
