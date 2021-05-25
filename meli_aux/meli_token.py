@@ -9,7 +9,7 @@ from googleapiclient.discovery import build
 SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
 
 # Source: https://developers.google.com/gmail/api/quickstart/python
-# This function get the user's credentials. 
+# This function get the user's credentials.
 def getCredentials():
     creds = None  
     # The file token.json stores the user's access and refresh tokens, and is
