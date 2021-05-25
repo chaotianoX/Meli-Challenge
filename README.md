@@ -16,9 +16,7 @@ Para el uso de la aplicación, es necesario:
    - google-auth-httplib2
    - google-auth-oauthlib
 
-Una vez realizado lo anterior, vamos a ejecutar el siguiente comando:
-`python3 start.py`
-
+Una vez realizado lo anterior, ejecutar el comando: `python3 start.py`
 El cual nos abrira una sesión del navegador en donde nos tendremos que loguear utilizando la cuenta de prueba y tendremos que aceptar los permisos que requiere la aplicación.
 
 Luego de esto y si no hubo ningun inconveniente veremos un mensaje satisfactorio en la consola y podremos correr el contenedor de Docker
