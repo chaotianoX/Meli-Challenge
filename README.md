@@ -6,14 +6,15 @@ La misma consiste en un script que se conecta automaticamente a la cuenta de gma
 Para que la aplicación funcione correctamente, es necesario tener instalado:
  - Docker-compose
  - Python3 y pip3
- - google-api-python-client
- - google-auth-httplib2
- - google-auth-oauthlib
 
 ## Utilizar la aplicación
 Para el uso de la aplicación, es necesario:
  - Clonar el repositorio
  - Generar el archivo **credentials.json** y guardarlo dentro del repositorio clonado.
+ - Ejecutar el comando `pip3 install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib` para instalar las siguientes dependencias:
+   - google-api-python-client
+   - google-auth-httplib2
+   - google-auth-oauthlib
 
 Una vez realizado lo anterior, vamos a ejecutar el siguiente comando:
 `python3 start.py`
