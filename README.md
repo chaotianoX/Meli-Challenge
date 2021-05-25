@@ -1,5 +1,5 @@
 # Meli-Challenge
-Esta aplicación cumple con el challenge propuesto Caso - Keyword en Gmail.
+Esta aplicación cumple con el challenge propuesto "**Caso - Keyword en Gmail**".
 La misma consiste en un script que se conecta automaticamente a la cuenta de gmail, busca por todos los correos que contengan la palabra **DevOps** y los almacena en una base de datos.
 
 ## Requisitos
