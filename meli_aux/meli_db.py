@@ -1,6 +1,8 @@
 # Import the required libraries
 #import MySQLdb
+import time
 import pymysql
+time.sleep(1)
 
 # Site from reference: https://pynative.com/python-mysql-insert-data-into-database-table/
 def dbConnection():
